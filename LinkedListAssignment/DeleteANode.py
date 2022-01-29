@@ -19,7 +19,7 @@ def deleteItr(head,i):
         head = head.next
     else:
         curr = head
-        for j in range(0,1):
+        for j in range(0,i):
             curr = curr.next
         end = curr.next.next
         curr.next.next = None
@@ -61,5 +61,5 @@ def takeInput(str):
 
 head = takeInput("1 2 3 4 5 6 -1")
 printLL(head)
-head = delete(head,2)
+head = deleteItr(head,2)
 printLL(head)

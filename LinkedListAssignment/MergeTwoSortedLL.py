@@ -14,7 +14,7 @@ def printLL(head):
 
 def merge(head1,head2):
 
-    fh = Node()
+    fh = Node(3)
     ft = fh
     while head1 is not None and head2 is not None:
         if head1.data < head2.data:
@@ -56,7 +56,10 @@ def takeInput(str):
             tail = newNode
     return head
 
-head = takeInput("1 2 3 4 5 6 -1")
+
+head1 = takeInput("1 2 4")
+printLL(head1)
+head2 = takeInput("5 6 7")
+printLL(head2)
+head = merge(head1,head2)
 printLL(head)
-head = midpoint(head)
-print(head)
