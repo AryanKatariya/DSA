@@ -30,7 +30,7 @@ def merge(head1,head2):
 
     return fh.next
 
-def midpoint_linkedlist(head):
+def midpoint(head):
     slow = head
     fast = head
     while fast.next != None and fast.next.next != None:
@@ -43,7 +43,7 @@ def mergeSort(head):
     if head.next is None:
       return head
 
-    mid = midpoint_linkedlist(head)
+    mid = midpoint(head)
 
     h1 = head
     temp = head

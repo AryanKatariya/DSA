@@ -39,8 +39,6 @@ def deleteRec(head, i):
 
     return head
 
-
-
 def takeInput(str):
 
     inputList = [int(ele) for ele in str.split()]
@@ -61,5 +59,5 @@ def takeInput(str):
 
 head = takeInput("1 2 3 4 5 6 -1")
 printLL(head)
-head = deleteItr(head,2)
+head = deleteRec(head,2)
 printLL(head)
