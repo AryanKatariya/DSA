@@ -1,4 +1,3 @@
-s = "Aryan Katariya"
-c = s.split()[-1]
-    b= 
-print(c)
+a = "1100"
+b = a[::-1]
+print(b)
