@@ -1,3 +1,2 @@
-a = "1100"
-b = a[::-1]
-print(b)
+for i in range(4):
+    print(i)
