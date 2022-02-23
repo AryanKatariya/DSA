@@ -19,3 +19,18 @@
 >>>
 >>> print ordered_dictionary
 OrderedDict([('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e', 5)])'''
+
+from collections import OrderedDict
+
+od = OrderedDict()
+
+for i in range(int(input())):
+    str = input().split()
+    key = " ".join(str[:-1])
+    val = int(str[-1])
+    if key in od:
+        od[key]=od[key]+val
+    else:
+        od[key] = val
+for key,val in od.items():
+    print(key,val)
