@@ -29,6 +29,24 @@ def printPreorder(root):
         printPreorder(root.left)
         printPreorder(root.right)
 
+def inorderTraversal(A):
+    stack, ans = list(), list()
+    if A:
+        stack.append(A)
+
+    while stack:
+        node = stack[-1]
+        if not node.left or hasattr(node.left, 'visited'):
+            node.visited = True
+            ans.append(stack.pop().data)
+
+            if node.right:
+                stack.append(node.right)
+        else:
+            stack.append(node.left)
+
+    return ans
+
 btn1 = Node(1)
 btn2 = Node(2)
 btn3 = Node(3)
@@ -46,3 +64,5 @@ print()
 printPreorder(btn1)
 print()
 printPostorder(btn1)
+print()
+print(inorderTraversal(btn1))
