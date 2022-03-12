@@ -68,4 +68,4 @@ def printLevelWise(root):
     return root
 
 root = takeLevelWiseTreeInput()
-printTreeDetailed(root)
+printLevelWise(root)
