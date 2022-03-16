@@ -32,17 +32,19 @@ def levelWiseInput():
             current_node.right = rightChild
             q.put(rightChild)
 
+
     return root
 
-def search(root, x):
-    if root is None:
+def constructBST(lst):
+    if not lst:
         return None
-    if x == root.data:
-        return root
-    if x < root.data:
-        return search(root.left, x)
-    if x > root.data:
-        return search(root.right, x)
+
+    mid = len(lst)//2
+    root = Node(lst[mid])
+    root.left = constructBST(lst[:mid])
+    root.right = constructBST(lst[mid+1:])
+
+    return root
 
 def PrintTree(root):
     if root == None:
@@ -77,6 +79,6 @@ def printLevelATNewLine(root):
         print()
         inputQ, outputQ = outputQ, inputQ
 
-root = levelWiseInput()
+lst = [1,6,8,2,3,7,9,4,5]
+root=constructBST(sorted(lst))
 printLevelATNewLine(root)
-print(search(root,5))

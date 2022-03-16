@@ -32,17 +32,19 @@ def levelWiseInput():
             current_node.right = rightChild
             q.put(rightChild)
 
+
     return root
 
-def search(root, x):
+def elementsInRangeK1K2(root, k1, k2):
     if root is None:
         return None
-    if x == root.data:
-        return root
-    if x < root.data:
-        return search(root.left, x)
-    if x > root.data:
-        return search(root.right, x)
+
+    elementsInRangeK1K2(root.left, k1, k2)
+
+    if root.data >= k1 and root.data <= k2:
+        print(root.data, end = " ")
+
+    elementsInRangeK1K2(root.right, k1, k2)
 
 def PrintTree(root):
     if root == None:
@@ -79,4 +81,4 @@ def printLevelATNewLine(root):
 
 root = levelWiseInput()
 printLevelATNewLine(root)
-print(search(root,5))
+print(elementsInRangeK1K2(root,1,5))
