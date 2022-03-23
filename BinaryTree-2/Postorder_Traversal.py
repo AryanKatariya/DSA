@@ -1,3 +1,5 @@
+import queue
+
 class Node:
     def __init__(self,data):
         self.left = None
@@ -32,22 +34,6 @@ def levelWiseInput():
 
     return root
 
-def PrintTree(root):
-    if root == None:
-        return
-    print(root.data, end=':')
-
-    if root.left != None:
-        print('L',root.left.data,end=',')
-
-    if root.right != None:
-        print('R',root.right.data,end='')
-
-    print()
-
-    PrintTree(root.left)
-    PrintTree(root.right)
-
 def printLevelATNewLine(root):
     if root==None:
         return
@@ -65,12 +51,26 @@ def printLevelATNewLine(root):
         print()
         inputQ, outputQ = outputQ, inputQ
 
-def maxDepth(root):
-        if not root:
-            return 0
-        left = maxDepth(root.left)
-        right = maxDepth(root.right)
-        if left > right:
-            return left + 1
-        else:
-            return right + 1
+def preorderTraversal(root):
+        result, curr = [], root
+        while curr:
+            if curr.left is None:
+                result.append(curr.data)
+                curr = curr.right
+            else:
+                node = curr.left
+                while node.right and node.right != curr:
+                    node = node.right
+
+                if node.right is None:
+                    result.append(curr.data)
+                    node.right = curr
+                    curr = curr.left
+                else:
+                    node.right = None
+                    curr = curr.right
+
+        return result
+
+root = levelWiseInput()
+print(postorderTraversal(root))

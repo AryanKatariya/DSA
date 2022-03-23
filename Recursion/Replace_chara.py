@@ -1,4 +1,4 @@
-def ReplaceChar(s,a,b):
+    def ReplaceChar(s,a,b):
     l = len(s)
     if l == 0:
         return s
@@ -11,4 +11,4 @@ def ReplaceChar(s,a,b):
 
 print(ReplaceChar("dacdxcd","c","x"))
 
-# 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
+# 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
