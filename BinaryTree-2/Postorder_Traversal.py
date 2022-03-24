@@ -51,26 +51,23 @@ def printLevelATNewLine(root):
         print()
         inputQ, outputQ = outputQ, inputQ
 
-def preorderTraversal(root):
-        result, curr = [], root
-        while curr:
-            if curr.left is None:
-                result.append(curr.data)
-                curr = curr.right
+def postorderTraversal(root):
+        stack,result = [],[]
+        while root and stack:
+            while root:
+                stack.append(root)
+                root = root.left
+            temp = stack[-1].right
+            if temp:
+                right = temp
             else:
-                node = curr.left
-                while node.right and node.right != curr:
-                    node = node.right
-
-                if node.right is None:
-                    result.append(curr.data)
-                    node.right = curr
-                    curr = curr.left
-                else:
-                    node.right = None
-                    curr = curr.right
-
+                temp = stack.pop()
+                result.append(temp.val)
+                while stack and temp == stack[-1].right:
+                    temp = stack.pop()
+                    result.append(temp.val)
         return result
+
 
 root = levelWiseInput()
 print(postorderTraversal(root))
