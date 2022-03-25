@@ -1,2 +1,5 @@
-for i in range(4):
-    print(i)
+import array
+
+a = array.array("i",[1,2,3])
+
+print(a)

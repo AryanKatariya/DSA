@@ -52,7 +52,8 @@ def printLevelATNewLine(root):
         inputQ, outputQ = outputQ, inputQ
 
 def inorderTraversal(root):
-        result, curr = [], root
+        result = []
+        curr = root
         while curr:
             if curr.left is None:
                 result.append(curr.data)

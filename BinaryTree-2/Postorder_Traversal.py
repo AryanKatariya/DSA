@@ -52,21 +52,23 @@ def printLevelATNewLine(root):
         inputQ, outputQ = outputQ, inputQ
 
 def postorderTraversal(root):
-        stack,result = [],[]
-        while root and stack:
-            while root:
-                stack.append(root)
-                root = root.left
-            temp = stack[-1].right
-            if temp:
-                right = temp
+        node = root
+        pre = node
+        stack = []
+        res = []
+        while node or stack:
+            while node:
+                stack.append(node)
+                node = node.left
+            node = stack[-1]
+            if node.right is pre or not node.right:
+                pre = stack.pop()
+                res.append(pre.val)
+                node = None
             else:
-                temp = stack.pop()
-                result.append(temp.val)
-                while stack and temp == stack[-1].right:
-                    temp = stack.pop()
-                    result.append(temp.val)
-        return result
+                node = node.right
+        return res
+
 
 
 root = levelWiseInput()
