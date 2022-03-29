@@ -1,4 +1,4 @@
-    def ReplaceChar(s,a,b):
+def ReplaceChar(s,a,b):
     l = len(s)
     if l == 0:
         return s
