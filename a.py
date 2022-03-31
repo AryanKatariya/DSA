@@ -1,2 +1,2 @@
-for i in range(1,5):
-    print(i)
+str = "I love \India"
+print(str.split("\"))
