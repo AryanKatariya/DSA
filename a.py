@@ -8,16 +8,20 @@
 # n = int(input())
 # integer_list = map(int, input().split())
 # print(list[integer_list])
-s = 'hACKERrANK.COM PRESENTS "pYTHONIST 2".'
-def swap_case(s):
-    for i in s:
-        if i.isupper() is False:
-            i.upper()
-        else:
-            i.lower()
+# s = 'hACKERrANK.COM PRESENTS "pYTHONIST 2".'
+# def swap_case(s):
+#     for i in s:
+#         if i.isupper() is False:
+#             i.upper()
+#         else:
+#             i.lower()
+#
+#     return s
+# print(swap_case(s))
+#
+# for i in s:
+#     print(i.isupper())
 
-    return s
-print(swap_case(s))
-
+s = "anagram"
 for i in s:
-    print(i.isupper())
+    print(i)
